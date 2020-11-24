@@ -2,12 +2,12 @@
 /**
  * Lerm theme setup
  *
- * @package Lerm
+ * @package Novel\Inc
  */
 
-namespace Lerm\Inc;
+namespace Novel\Inc;
 
-use Lerm\Inc\Traits\Singleton;
+use Novel\Inc\Traits\Singleton;
 
 class THEME_SETUP {
 
@@ -19,15 +19,15 @@ class THEME_SETUP {
 		Comment_Walker::get_instance();
 		Carousel::get_instance();
 		Mail::get_instance();
-        Thumbnail::get_instance();
+		Thumbnail::get_instance();
 		$this->hooks();
 	}
 
 	public function hooks() {
-		add_action( 'after_setup_theme', [ $this, 'setup' ], 2 );
-		add_action( 'after_setup_theme', [ $this, 'content_width' ] );
-		add_action( 'widgets_init', [ $this, 'register_sidebar' ] );
-		add_action( 'widgets_init', [ $this, 'widgets' ] );
+		add_action( 'after_setup_theme', array( $this, 'setup' ), 2 );
+		add_action( 'after_setup_theme', array( $this, 'content_width' ) );
+		add_action( 'widgets_init', array( $this, 'register_sidebar' ) );
+		add_action( 'widgets_init', array( $this, 'widgets' ) );
 	}
 
 	/**
@@ -89,7 +89,7 @@ class THEME_SETUP {
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory
 		 */
-		load_theme_textdomain( DOMAIN, LERM_DIR . '/languages' );
+		load_theme_textdomain( 'novel', get_template_directory() . '/languages' );
 	}
 
 	/**
@@ -118,7 +118,8 @@ class THEME_SETUP {
 				'after_title'   => '</span></h4>',
 			)
 		);
-		$widgets = lerm_options( 'register_sidebars' );
+		$widgets = '';
+		// lerm_options( 'register_sidebars' );
 		if ( isset( $widgets ) && ! empty( $widgets ) ) {
 			foreach ( $widgets as $key => $value ) {
 				$sidebar_id = 'sidebar' . preg_replace( '/ /', '', Chinese_to_PY::getPY( $value['sidebar_title'], 'all' ) );
@@ -137,7 +138,8 @@ class THEME_SETUP {
 				}
 			}
 		}
-		$footer_sidebars_count = (int) lerm_options( 'footer_sidebars_count' );
+		$footer_sidebars_count = 4;
+		// (int) lerm_options( 'footer_sidebars_count' );
 		register_sidebars(
 			$footer_sidebars_count,
 			array(
@@ -160,8 +162,8 @@ class THEME_SETUP {
 	 * @return void
 	 */
 	public function widgets() {
-		register_widget( '\Lerm\Inc\Widgets\Popular_Posts' );
-		register_widget( '\Lerm\Inc\Widgets\Recent_Posts' );
-		register_widget( '\Lerm\Inc\Widgets\Recent_Comments' );
+		register_widget( '\Novel\Inc\Widgets\Popular_Posts' );
+		register_widget( '\Novel\Inc\Widgets\Recent_Posts' );
+		register_widget( '\Novel\Inc\Widgets\Recent_Comments' );
 	}
 }

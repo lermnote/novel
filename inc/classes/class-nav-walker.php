@@ -10,10 +10,10 @@
  * License URI: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-namespace Lerm\Inc;
+namespace Novel\Inc;
 
 use Walker_Nav_Menu;
-use Lerm\Inc\Traits\Singleton;
+use Novel\Inc\Traits\Singleton;
 
 // Check if Class Exists.
 if ( ! class_exists( 'Nav_Walker' ) ) :

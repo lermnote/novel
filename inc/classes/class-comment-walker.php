@@ -7,11 +7,11 @@
  * @since lerm 3.0
  */
 
-namespace LERM\Inc;
+namespace Novel\Inc;
 
 use Walker_Comment;
 
-use Lerm\Inc\Traits\Singleton;
+use Novel\Inc\Traits\Singleton;
 
 class Comment_Walker extends Walker_Comment {
 

@@ -20,7 +20,7 @@
  * @since 1.0.0
  */
 
-namespace Lerm\Inc;
+namespace Novel\Inc;
 
 class SVG_Icons {
 

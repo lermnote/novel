@@ -11,3 +11,6 @@
  *
  * @package Novel
  */
+wp_head();
+
+wp_footer();

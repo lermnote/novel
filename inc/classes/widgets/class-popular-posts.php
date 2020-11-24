@@ -4,7 +4,7 @@
  *
  * @since 1.0.0
  */
-namespace Lerm\Inc\Widgets;
+namespace Novel\Inc\Widgets;
 
 use WP_Widget;
 use WP_Query;

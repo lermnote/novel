@@ -6,9 +6,9 @@
  *
  * Display lerm_slides on Home page
  */
-namespace Lerm\Inc;
+namespace Novel\Inc;
 
-use Lerm\Inc\Traits\Singleton;
+use Novel\Inc\Traits\Singleton;
 
 class Carousel {
 
@@ -18,9 +18,12 @@ class Carousel {
 
 	public function __construct( $args = array() ) {
 		$defaults = array(
-			'slides'         => lerm_options( 'lerm_slides' ),
-			'indicators'     => lerm_options( 'slide_indicators' ),
-			'control_arrows' => lerm_options( 'slide_control' ),
+			// 'slides'         => lerm_options( 'lerm_slides' )? '':'',
+			// 'indicators'     => lerm_options( 'slide_indicators' ),
+			// 'control_arrows' => lerm_options( 'slide_control' ),
+			'slides'         => '',
+			'indicators'     => '',
+			'control_arrows' => '',
 		);
 		// Parse the arguments with the deaults.
 		$this->args = apply_filters( 'lerm_slide_', wp_parse_args( $args, $defaults ) );

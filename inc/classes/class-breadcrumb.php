@@ -30,9 +30,9 @@
  * @access public
  */
 
-namespace Lerm\Inc;
+namespace Novel\Inc;
 
-use Lerm\Inc\Traits\Singleton;
+use Novel\Inc\Traits\Singleton;
 
 class Breadcrumb {
 

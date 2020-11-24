@@ -2,12 +2,12 @@
 /**
  * custom Mail handle
  *
- * @package Lerm\Inc
+ * @package Novel\Inc
  */
 
-namespace Lerm\Inc;
+namespace Novel\Inc;
 
-use Lerm\Inc\Traits\Singleton;
+use Novel\Inc\Traits\Singleton;
 const CONTENT_TYPE_MULTIPART_ALTERNATIVE = 'multipart/alternative';
 class Mail extends Theme_Abstract {
 

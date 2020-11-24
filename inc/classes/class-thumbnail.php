@@ -2,13 +2,13 @@
 /**
  * Posts thumbnail handle.
  *
- * @package Lerm/Inc
+ * @package Novel/Inc
  */
 
-namespace Lerm\Inc;
+namespace Novel\Inc;
 
-use Lerm\Inc\Traits\Hooker;
-use Lerm\Inc\Traits\Singleton;
+use Novel\Inc\Traits\Hooker;
+use Novel\Inc\Traits\Singleton;
 
 class Thumbnail extends Theme_Abstract {
 	use Hooker, Singleton;
@@ -28,23 +28,7 @@ class Thumbnail extends Theme_Abstract {
 
 	protected function hooks() {
 		$this->filter( 'post_thumbnail_html', 'get_default_thumbnail', 1, 5 );
-		// $this->thumbnail_gallery();
 	}
-
-	public function render() { ?>
-		<!-- <figure class="post-thumbnail"> -->
-
-			<!-- <?php //the_post_thumbnail(); ?> -->
-
-		<!-- </figure> -->
-		<?php
-	}
-
-	// protected function set_thumbnail( $image_id ) {
-	// 	return wp_get_attachment_image( $image_id );
-	// }
-
-
 
 	public function get_default_thumbnail( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
 
@@ -66,7 +50,7 @@ class Thumbnail extends Theme_Abstract {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	protected function feature_image() {
 		return has_post_thumbnail() ? get_post_thumbnail_id() : '';
@@ -74,7 +58,7 @@ class Thumbnail extends Theme_Abstract {
 
 	/**
 	 * Hanlde post images
-	 * 
+	 *
 	 * @return string attachment_url_to_postid( $matches[1][0] ) first post image id
 	 */
 	protected function post_images() {

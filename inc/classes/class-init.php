@@ -2,15 +2,15 @@
 /**
  * Theme initial class
  *
- * @package Lerm\inc
+ * @package Novel\Inc
  */
 
-namespace Lerm\Inc;
+namespace Novel\Inc;
 
 use WP_Error;
 
-use Lerm\Inc\Traits\Singleton;
-use Lerm\Inc\Traits\Hooker;
+use Novel\Inc\Traits\Singleton;
+use Novel\Inc\Traits\Hooker;
 
 class Init extends Theme_Abstract {
 	use Singleton, hooker;
@@ -129,7 +129,7 @@ class Init extends Theme_Abstract {
 	 * @return string The site title separator.
 	 */
 	public function title_separator( $sep ) {
-		return lerm_options( 'title_sep' ) ? str_replace( '-', lerm_options( 'title_sep' ), $sep ) : $sep;
+		//return lerm_options( 'title_sep' ) ? str_replace( '-', lerm_options( 'title_sep' ), $sep ) : $sep;
 	}
 
 	/**

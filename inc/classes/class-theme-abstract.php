@@ -1,6 +1,6 @@
 <?php
 
-namespace Lerm\Inc;
+namespace Novel\Inc;
 
 abstract class Theme_Abstract {
 

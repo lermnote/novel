@@ -5,11 +5,11 @@
  * @package LERM
  */
 
-namespace Lerm\Inc;
+namespace Novel\Inc;
 
 function autoloader( $resource = '' ) {
 	$resource_path  = false;
-	$namespace_root = 'Lerm\\';
+	$namespace_root = 'Novel\\';
 	$resource       = trim( $resource, '\\' );
 
 	if ( empty( $resource ) || strpos( $resource, '\\' ) === false || strpos( $resource, $namespace_root ) !== 0 ) {
@@ -77,4 +77,4 @@ function autoloader( $resource = '' ) {
 	}
 
 }
-spl_autoload_register( '\Lerm\Inc\autoloader' );
+spl_autoload_register( '\Novel\Inc\autoloader' );
