@@ -26,16 +26,19 @@ class Carousel {
 			'control_arrows' => '',
 		);
 		// Parse the arguments with the deaults.
-		$this->args = apply_filters( 'lerm_slide_', wp_parse_args( $args, $defaults ) );
+		$this->args = apply_filters( 'lerm_slide_args', wp_parse_args( $args, $defaults ) );
 		$this->get();
 	}
 
 	private function get() {
 		$all_slides = $this->args['slides'];
 		$sort       = 0;
+        $slides     = array();
 		if ( $all_slides ) {
 			foreach ( $all_slides as $slide ) {
-				if ( ! empty( $slide['image']['id'] ) ) {
+				// $attachment = wp_get_attachment_image_src( $slide['image'], 'full' );
+                // var_dump($attachment);
+				if ( ! empty( $slide['image'] ) ) {
 					$slides[ $sort ] = $slide;
 					$sort++;
 				}
@@ -49,9 +52,10 @@ class Carousel {
 		$carousel  = '';
 		if ( $this->slides ) {
 			foreach ( $this->slides as $key => $slide ) {
+				$attachment = wp_get_attachment_image_src( $slide['image'], 'full' );
 				$active     = ( 0 === $key ) ? ' active' : '';
 				$indicator .= sprintf( '<li data-target="#lermSlides" data-slide-to="%s" class="%s"></li>', $key, $active );
-				$image      = sprintf( '<img class="d-block img-fluid w-100 rounded slider " src="%1$s" alt="%2$s" width="%3$s" height="%4$s">', $slide['image']['url'], $slide['title'], $slide['image']['width'], $slide['image']['height'] );
+				$image      = sprintf( '<img class="d-block img-fluid w-100 rounded slider " src="%1$s" alt="%2$s" width="%3$s" height="%4$s">', $attachment[0], $attachment[0], $attachment[1], $attachment[2] );
 				$link       = sprintf( '<a href="%1$s" title="%2$s">%3$s</a>', $slide['url'], $slide['title'], $image );
 				$title      = sprintf( '<div class="carousel-caption">%1$s%2$s</div>', $slide['title'] ? '<h5>' . $slide['title'] . '</h5>' : '', $slide['description'] ? '<p>' . $slide['description'] . '</p>' : '' );
 				$carousel  .= sprintf( '<div class="carousel-item%1$s">%2$s%3$s</div>', $active, $slide['url'] ? $link : $image, $title );

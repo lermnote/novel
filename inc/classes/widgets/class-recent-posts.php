@@ -70,7 +70,7 @@ class Recent_Posts extends WP_Widget {
 				?>
 	<li class="widget-post d-flex">
 		<div class="col-md-4 p-0">
-			<?php get_template_part('template-parts/content/features-image'); ?>
+				<?php get_template_part( 'template-parts/content/features-image' ); ?>
 		</div>
 		<div class="col-md-8 d-flex flex-column justify-content-between pr-0">
 			<a href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a>

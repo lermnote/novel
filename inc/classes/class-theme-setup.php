@@ -18,8 +18,8 @@ class THEME_SETUP {
 		Enqueue::get_instance();
 		Comment_Walker::get_instance();
 		Carousel::get_instance();
-		Mail::get_instance();
-		Thumbnail::get_instance();
+		//Mail::get_instance();
+		//Thumbnail::get_instance();
 		$this->hooks();
 	}
 
@@ -110,9 +110,9 @@ class THEME_SETUP {
 		register_sidebar(
 			array(
 				'name'          => __( 'HomePage Sidebar', 'lerm' ),
-				'id'            => 'home-sidebar',
+				'id'            => 'sidebar-header',
 				'description'   => __( 'Add widgets here to appear in your sidebar.', 'lerm' ),
-				'before_widget' => '<section id="%1$s" class="card border-0 widget mb-3 %2$s loading-animate fadeInUp">',
+				'before_widget' => '<section id="%1$s" class="card widget mb-3 %2$s loading-animate fadeInUp">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h4 class="widget-title card-header"><span class="wrap d-inline-block fa">',
 				'after_title'   => '</span></h4>',

@@ -951,80 +951,80 @@ $options[] = array(
 // // ----------------------------------------
 // // a opttion panel for Carousel -- done
 // // ----------------------------------------
-// $options[] = array(
-// 	'name'   => 'carousel',
-// 	'icon'   => 'fa fa-camera-retro',
-// 	'title'  => __( 'Carousel Options', 'lerm' ),
-// 	'fields' => array(
-// 		array(
-// 			'id'    => 'slide_switcher',
-// 			'type'  => 'switcher',
-// 			'title' => __( 'Enable Slides', 'lerm' ),
-// 			'label' => __( 'Enable to show slides on frontpage', 'lerm' ),
-// 		),
-// 		array(
-// 			'id'         => 'slide_position',
-// 			'type'       => 'radio',
-// 			'title'      => __( 'Slides Position', 'lerm' ),
-// 			'label'      => __( 'Select Slides Position On frontpage', 'lerm' ),
-// 			'dependency' => array( 'slide_switcher', '==', 'true' ),
-// 			'options'    => array(
-// 				'under_navbar'     => __( 'Under navbar', 'lerm' ),
-// 				'above_entry_list' => __( 'Above entry list', 'lerm' ),
-// 				'full_width'       => __( 'Under navbar(Full width)', 'lerm' ),
-// 			),
-// 		),
-// 		array(
-// 			'id'         => 'slide_indicators',
-// 			'type'       => 'switcher',
-// 			'title'      => __( 'Slides indicators', 'lerm' ),
-// 			'label'      => __( 'Enable to show slides indicators', 'lerm' ),
-// 			'dependency' => array( 'slide_switcher', '==', 'true' ),
-// 		),
-// 		array(
-// 			'id'         => 'slide_control',
-// 			'type'       => 'switcher',
-// 			'title'      => __( 'Slides control arrows', 'lerm' ),
-// 			'label'      => __( 'Enable to show slides control arrows', 'lerm' ),
-// 			'dependency' => array( 'slide_switcher', '==', 'true' ),
-// 		),
-// 		array(
-// 			'id'                     => 'lerm_slides',
-// 			'type'                   => 'group',
-// 			'dependency'             => array( 'slide_switcher', '==', 'true' ),
-// 			'title'                  => __( 'Slides', 'lerm' ),
-// 			'button_title'           => __( 'Add Slide', 'lerm' ),
-// 			'accordion_title'        => __( 'New Slide', 'lerm' ),
-// 			'accordion_title_number' => true,
-// 			'accordion_title_auto'   => false,
-// 			'fields'                 => array(
-// 				array(
-// 					'id'    => 'image',
-// 					'type'  => 'media',
-// 					'title' => __( 'Slide', 'lerm' ),
-// 					'url'   => false,
-// 				),
-// 				array(
-// 					'id'    => 'title',
-// 					'type'  => 'text',
-// 					'title' => __( 'Title', 'lerm' ),
-// 				),
-// 				array(
-// 					'id'    => 'url',
-// 					'type'  => 'text',
-// 					'title' => __( 'URL', 'lerm' ),
-// 				),
-// 				array(
-// 					'id'    => 'description',
-// 					'type'  => 'textarea',
-// 					'title' => __( 'Description', 'lerm' ),
-// 				),
-// 			),
-// 		),
+$options[] = array(
+	'name'   => 'carousel',
+	'icon'   => 'fa fa-camera-retro',
+	'title'  => __( 'Carousel Options', 'lerm' ),
+	'fields' => array(
+		array(
+			'id'    => 'slide_switcher',
+			'type'  => 'switcher',
+			'title' => __( 'Enable Slides', 'lerm' ),
+			'label' => __( 'Enable to show slides on frontpage', 'lerm' ),
+		),
+		array(
+			'id'         => 'slide_position',
+			'type'       => 'radio',
+			'title'      => __( 'Slides Position', 'lerm' ),
+			'label'      => __( 'Select Slides Position On frontpage', 'lerm' ),
+			'dependency' => array( 'slide_switcher', '==', 'true' ),
+			'options'    => array(
+				'under_navbar'     => __( 'Under navbar', 'lerm' ),
+				'above_entry_list' => __( 'Above entry list', 'lerm' ),
+				'full_width'       => __( 'Under navbar(Full width)', 'lerm' ),
+			),
+		),
+		array(
+			'id'         => 'slide_indicators',
+			'type'       => 'switcher',
+			'title'      => __( 'Slides indicators', 'lerm' ),
+			'label'      => __( 'Enable to show slides indicators', 'lerm' ),
+			'dependency' => array( 'slide_switcher', '==', 'true' ),
+		),
+		array(
+			'id'         => 'slide_control',
+			'type'       => 'switcher',
+			'title'      => __( 'Slides control arrows', 'lerm' ),
+			'label'      => __( 'Enable to show slides control arrows', 'lerm' ),
+			'dependency' => array( 'slide_switcher', '==', 'true' ),
+		),
+		array(
+			'id'                     => 'lerm_slides',
+			'type'                   => 'group',
+			'dependency'             => array( 'slide_switcher', '==', 'true' ),
+			'title'                  => __( 'Slides', 'lerm' ),
+			'button_title'           => __( 'Add Slide', 'lerm' ),
+			'accordion_title'        => __( 'New Slide', 'lerm' ),
+			'accordion_title_number' => true,
+			'accordion_title_auto'   => false,
+			'fields'                 => array(
+				array(
+					'id'    => 'image',
+					'type'  => 'image',
+					'title' => __( 'Slide', 'lerm' ),
+					'url'   => false,
+				),
+				array(
+					'id'    => 'title',
+					'type'  => 'text',
+					'title' => __( 'Title', 'lerm' ),
+				),
+				array(
+					'id'    => 'url',
+					'type'  => 'text',
+					'title' => __( 'URL', 'lerm' ),
+				),
+				array(
+					'id'    => 'description',
+					'type'  => 'textarea',
+					'title' => __( 'Description', 'lerm' ),
+				),
+			),
+		),
 
-// 	),
+	),
 
-// );
+);
 // // ----------------------------------------
 // // a opttion panel for other -- done
 // // ----------------------------------------
